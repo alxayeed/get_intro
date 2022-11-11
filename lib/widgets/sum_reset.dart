@@ -30,6 +30,7 @@ class SumReset extends StatelessWidget {
         TextButton(
             onPressed: () {
               tapController.resetX();
+              tapController.resetY();
             },
             child: const Text(
               'RESET',

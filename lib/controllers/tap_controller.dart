@@ -16,8 +16,7 @@ class TapController extends GetxController{
   }
 
   void increaseY(){
-    _y++;
-    update();
+    _y.value++;
   }
 
   void decreaseX(){
@@ -26,8 +25,7 @@ class TapController extends GetxController{
   }
 
   void decreaseY(){
-    _y--;
-    update();
+    _y.value--;
   }
 
   void resetX(){
@@ -35,11 +33,9 @@ class TapController extends GetxController{
     update();
   }
 
-  // void resetY(){
-  //   _y = 1.obs;
-  //   print(_y);
-  //   update();
-  // }
+  void resetY(){
+    _y.value = 0;
+  }
 
 void sumXY(){
   _z = _x.obs + _y.value;
