@@ -8,7 +8,7 @@ class SecondScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TapController tapController = Get.put(TapController());
+    TapController tapController = Get.find();
 
     return SafeArea(
       child: Scaffold(
