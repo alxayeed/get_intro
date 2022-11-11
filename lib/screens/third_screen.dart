@@ -3,6 +3,9 @@ import 'package:get/get.dart';
 import 'package:getx_intro/controllers/tap_controller.dart';
 import 'package:getx_intro/screens/home_screens.dart';
 
+import '../widgets/x_counter.dart';
+import '../widgets/y_counter.dart';
+
 class ThirdScreen extends StatelessWidget {
   const ThirdScreen({Key? key}) : super(key: key);
 
@@ -21,32 +24,14 @@ class ThirdScreen extends StatelessWidget {
         body: Column(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            GetBuilder<TapController>(builder: (_) {
-              return Text(
-                tapController.x.toString(),
-                style: const TextStyle(fontSize: 64),
-              );
-            }),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                IconButton(
-                    onPressed: () {
-                      tapController.increaseX();
-                    },
-                    icon: const Icon(Icons.add, size: 64.0)),
-                IconButton(
-                    onPressed: () {
-                      tapController.resetX();
-                    },
-                    icon: const Icon(Icons.refresh, size: 64.0)),
-                IconButton(
-                    onPressed: () {
-                      tapController.decreaseX();
-                    },
-                    icon: const Icon(Icons.remove, size: 64.0)),
-              ],
-            ),
+            const XCounter(),
+            const YCounter(),
+            IconButton(
+                onPressed: () {
+                  tapController.resetX();
+                  // tapController.resetY();
+                },
+                icon: const Icon(Icons.refresh, size: 64.0)),
             GestureDetector(
               onTap: () {
                 Get.to(() => const HomeScreen());

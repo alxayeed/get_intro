@@ -3,12 +3,15 @@ import 'package:get/get.dart';
 import 'package:getx_intro/controllers/tap_controller.dart';
 import 'package:getx_intro/screens/third_screen.dart';
 
+import '../widgets/x_counter.dart';
+import '../widgets/y_counter.dart';
+
 class SecondScreen extends StatelessWidget {
   const SecondScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    // TapController tapController = Get.find();
+    TapController tapController = Get.find();
 
     return SafeArea(
       child: Scaffold(
@@ -19,34 +22,16 @@ class SecondScreen extends StatelessWidget {
           title: const Text("Second Screen"),
         ),
         body: Column(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
-            GetBuilder<TapController>(builder: (_) {
-              return Text(
-                Get.find<TapController>().x.toString(),
-                style: const TextStyle(fontSize: 64),
-              );
-            }),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                IconButton(
-                    onPressed: () {
-                      Get.find<TapController>().increaseX();
-                    },
-                    icon: const Icon(Icons.add, size: 64.0)),
-                IconButton(
-                    onPressed: () {
-                      Get.find<TapController>().resetX();
-                    },
-                    icon: const Icon(Icons.refresh, size: 64.0)),
-                IconButton(
-                    onPressed: () {
-                      Get.find<TapController>().decreaseX();
-                    },
-                    icon: const Icon(Icons.remove, size: 64.0)),
-              ],
-            ),
+            const XCounter(),
+            const YCounter(),
+            IconButton(
+                onPressed: () {
+                  tapController.resetX();
+                  // tapController.resetY();
+                },
+                icon: const Icon(Icons.refresh, size: 64.0)),
             GestureDetector(
               onTap: () {
                 Get.to(() => const ThirdScreen());
