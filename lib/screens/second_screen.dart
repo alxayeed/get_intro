@@ -8,7 +8,7 @@ class SecondScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    TapController tapController = Get.find();
+    // TapController tapController = Get.find();
 
     return SafeArea(
       child: Scaffold(
@@ -23,7 +23,7 @@ class SecondScreen extends StatelessWidget {
           children: [
             GetBuilder<TapController>(builder: (_) {
               return Text(
-                tapController.x.toString(),
+                Get.find<TapController>().x.toString(),
                 style: const TextStyle(fontSize: 64),
               );
             }),
@@ -32,17 +32,17 @@ class SecondScreen extends StatelessWidget {
               children: [
                 IconButton(
                     onPressed: () {
-                      tapController.increaseX();
+                      Get.find<TapController>().increaseX();
                     },
                     icon: const Icon(Icons.add, size: 64.0)),
                 IconButton(
                     onPressed: () {
-                      tapController.resetX();
+                      Get.find<TapController>().resetX();
                     },
                     icon: const Icon(Icons.refresh, size: 64.0)),
                 IconButton(
                     onPressed: () {
-                      tapController.decreaseX();
+                      Get.find<TapController>().decreaseX();
                     },
                     icon: const Icon(Icons.remove, size: 64.0)),
               ],
