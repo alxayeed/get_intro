@@ -16,7 +16,7 @@ class XCounter extends StatelessWidget {
             onPressed: () {
               tapController.increaseX();
             },
-            icon: const Icon(Icons.add)),
+            icon: const Icon(Icons.add, size: 36, color: Colors.blue,)),
         GetBuilder<TapController>(builder: (_) {
           return Text(
             "X= ${tapController.x}",
@@ -27,7 +27,7 @@ class XCounter extends StatelessWidget {
             onPressed: () {
               tapController.decreaseX();
             },
-            icon: const Icon(Icons.remove)),
+            icon: const Icon(Icons.remove, size: 36, color: Colors.red,)),
       ],
     );
   }

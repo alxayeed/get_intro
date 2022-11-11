@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:getx_intro/controllers/tap_controller.dart';
 import 'package:getx_intro/screens/second_screen.dart';
+import 'package:getx_intro/widgets/sum_reset.dart';
 import 'package:getx_intro/widgets/x_counter.dart';
 import 'package:getx_intro/widgets/y_counter.dart';
 
@@ -25,12 +26,7 @@ class HomeScreen extends StatelessWidget {
           children: [
             const XCounter(),
             const YCounter(),
-            IconButton(
-                onPressed: () {
-                  tapController.resetX();
-                  // tapController.resetY();
-                },
-                icon: const Icon(Icons.refresh, size: 64.0)),
+            const SumReset(),
             GestureDetector(
               onTap: () {
                 Get.to(() => const SecondScreen());

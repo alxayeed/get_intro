@@ -16,7 +16,7 @@ class YCounter extends StatelessWidget {
             onPressed: () {
               tapController.increaseY();
             },
-            icon: const Icon(Icons.add)),
+            icon: const Icon(Icons.add,size: 36, color: Colors.blue,)),
         Obx(() => Text(
               "Y= ${tapController.y}",
               style: const TextStyle(fontSize: 64),
@@ -25,7 +25,7 @@ class YCounter extends StatelessWidget {
             onPressed: () {
               tapController.decreaseY();
             },
-            icon: const Icon(Icons.remove)),
+            icon: const Icon(Icons.remove,size: 36, color: Colors.red,)),
       ],
     );
   }

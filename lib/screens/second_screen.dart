@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 import 'package:getx_intro/controllers/tap_controller.dart';
 import 'package:getx_intro/screens/third_screen.dart';
 
+import '../widgets/sum_reset.dart';
 import '../widgets/x_counter.dart';
 import '../widgets/y_counter.dart';
 
@@ -26,12 +27,7 @@ class SecondScreen extends StatelessWidget {
           children: [
             const XCounter(),
             const YCounter(),
-            IconButton(
-                onPressed: () {
-                  tapController.resetX();
-                  // tapController.resetY();
-                },
-                icon: const Icon(Icons.refresh, size: 64.0)),
+            const SumReset(),
             GestureDetector(
               onTap: () {
                 Get.to(() => const ThirdScreen());
