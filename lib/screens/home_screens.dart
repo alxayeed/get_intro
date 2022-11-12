@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_intro/controllers/list_controller.dart';
 import 'package:getx_intro/controllers/tap_controller.dart';
 import 'package:getx_intro/screens/second_screen.dart';
 import 'package:getx_intro/widgets/sum_reset.dart';
@@ -12,6 +13,7 @@ class HomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TapController tapController = Get.put(TapController());
+    ListController listController = Get.put(ListController());
 
     return SafeArea(
       child: Scaffold(

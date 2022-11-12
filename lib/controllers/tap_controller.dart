@@ -38,7 +38,7 @@ class TapController extends GetxController{
   }
 
 void sumXY(){
-  _z = _x.obs + _y.value;
+  _z = _x.obs  + _y.value;
   update();
 }
 }

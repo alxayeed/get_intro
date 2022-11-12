@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:getx_intro/controllers/list_controller.dart';
 import 'package:getx_intro/controllers/tap_controller.dart';
 
 class SumReset extends StatelessWidget {
@@ -8,6 +9,7 @@ class SumReset extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     TapController tapController = Get.find();
+    ListController listController = Get.find();
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -15,9 +17,10 @@ class SumReset extends StatelessWidget {
         TextButton(
             onPressed: () {
               tapController.sumXY();
+              listController.setList(tapController.z.value);
               Get.snackbar(
-                "The sum of ${tapController.x} and ${tapController.y} is",
-                tapController.z.toString(),
+                "The sum of ${tapController.x} and ${tapController.y} is ${tapController.z.toString()}",
+                listController.list.toString(),
                 icon: const Icon(Icons.calculate, color: Colors.white),
                 snackPosition: SnackPosition.TOP,
                 backgroundColor: Colors.grey[300],
@@ -31,6 +34,7 @@ class SumReset extends StatelessWidget {
             onPressed: () {
               tapController.resetX();
               tapController.resetY();
+              listController.resetList();
             },
             child: const Text(
               'RESET',
