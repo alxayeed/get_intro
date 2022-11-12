@@ -18,13 +18,6 @@ class SumReset extends StatelessWidget {
             onPressed: () {
               tapController.sumXY();
               listController.setList(tapController.z.value);
-              Get.snackbar(
-                "The sum of ${tapController.x} and ${tapController.y} is ${tapController.z.toString()}",
-                listController.list.toString(),
-                icon: const Icon(Icons.calculate, color: Colors.white),
-                snackPosition: SnackPosition.TOP,
-                backgroundColor: Colors.grey[300],
-              );
             },
             child: const Text(
               'SUM',
