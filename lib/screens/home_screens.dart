@@ -12,8 +12,9 @@ class HomeScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Get.put(TapController());
-    Get.put(ListController());
+    // Method 1: initialize controller
+    // Get.put(TapController());
+    // Get.put(ListController());
 
     return SafeArea(
       child: Scaffold(
