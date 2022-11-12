@@ -35,6 +35,7 @@ class TapController extends GetxController{
 
   void resetY(){
     _y.value = 0;
+    _z.value = 0;
   }
 
 void sumXY(){
